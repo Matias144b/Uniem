@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniem - Ayudamos a emprendedores a iniciar su proyecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-section" id="login-section">
+        <span id="welcome-message"></span>
+        <button id="login-btn" onclick="login()">Iniciar sesión</button>
+        <button id="register-btn" onclick="openRegisterForm()">Registrarse</button>
+        <button id="logout-btn" onclick="logout()" style="display:none;">Cerrar sesión</button>
+    </div>
+    
+    <h1><img src="assets/logomini.png" alt="minilogo" width="25" height="25" style="border:2px solid rgba(13, 105, 105, 1)"> UNIEM</h1>   
+
+<nav>
+    <a href="#about">¿Quiénes somos?</a>
+    <a href="#about2">Nuestra visión</a>
+    <a href="#about3">Nuestra misión</a>
+    <a href="#services">Servicios</a>
+    <a href="#contact">Contacto</a>
+</nav>
