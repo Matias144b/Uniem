@@ -185,21 +185,34 @@ Uniem tiene como misión construir un entorno de apoyo donde los emprendedores p
 </section>
 
 <section id="contact" class="contact">
-  <h2 style="color: #ddd;">Contacto</h2>
-  <p style="color: #ddd;">¿Tienes una idea? ¡Nos encantaría escucharte! Llena el siguiente formulario y nos pondremos en contacto contigo:</p>
-  <form>
-      <label for="name" style="color: #ddd;">Nombre:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email" style="color: #ddd;">Correo Electrónico:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message" style="color: #ddd;">Mensaje:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <button type="submit">Enviar Mensaje</button>
-  </form>
-</section>
+    <h2 style="color: #ddd;">Contacto</h2>
+    <p style="color: #ddd;">¿Tienes una idea? ¡Nos encantaría escucharte! Llena el siguiente formulario y nos pondremos en contacto contigo:</p>
+    <form onsubmit="handleSubmit(event)">
+        <label for="name" style="color: #ddd;">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email" style="color: #ddd;">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message" style="color: #ddd;">Mensaje:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit" id="sendMessageBtn">Enviar Mensaje</button>
+    </form>
+    <p id="successMessage" style="color: lightgreen; display: none;">Mensaje enviado</p>
+  </section>
+  
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Evita que se recargue la página
+      const successMessage = document.getElementById("successMessage");
+      successMessage.style.display = "block"; // Muestra el mensaje
+      setTimeout(() => {
+        successMessage.style.display = "none"; // Oculta el mensaje después de 3 segundos
+      }, 3000);
+    }
+  </script>
+  
 
 <footer style="text-align: center;">
     <p><a href="https://www.facebook.com/CTL61?mibextid=ZbWKwL" target="_blank">Facebook</a></p>
