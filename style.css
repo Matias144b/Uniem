@@ -1,152 +1,167 @@
 <style>
 nav {
-    display: flex;
-    justify-content: center;
+    display: flex; /*Utiliza el modelo de diseño "flexbox" para organizar los elementos hijos dentro del contenedor*/
+    justify-content: center; /*Centra los elementos hijos horizontalmente dentro del contenedor.*/
     background-color: rgba(13, 105, 105, 1);
 }
+
 nav a {
     color: rgb(2, 1, 1);
-    padding: 16px;
-    text-decoration: none;
+    padding: 16px; /*Agrega espacio interno alrededor de cada enlace.*/
+    text-decoration: none; /*Elimina el subrayado de los enlaces.*/
     background-color: rgba(13, 105, 105, 1);
-    align-items: center;
+    align-items: center; /*(Centra los elementos hijos verticalmente dentro del contenedor.*/
     justify-content: center;
 }
+
 nav a:hover {
-    background-color: rgb(13, 84, 105);
+    background-color: rgb(13, 84, 105);/*Cambia el color de fondo del enlace cuando el usuario pasa el cursor por encima.*/
 }
+
 section {
-    padding: 32px;
+    padding: 32px;/*Añade espacio interno en todas las direcciones dentro de las secciones.*/
 }
+
 .services, .contact {
     background-color: rgba(13, 105, 105, 1);
-    margin: 32px 0;
+    margin: 32px 0; /*Añade un margen vertical entre estas secciones y los elementos adyacentes.*/
     padding: 32px;
-    border-radius: 8px;
+    border-radius: 8px; /*Redondea las esquinas de estas secciones.*/
 }
+
 h1, h2, h3 {
     color: rgba(13, 105, 105, 1);
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 h1 {
     font-size: 50px;
 }
+
 body {
-    background-image: url(assets/logo.jpg);
-    background-attachment: fixed;
-    background-position: center;
+    background-image: url(assets/logo.jpg); /*Establece una imagen de fondo para la página.*/
+    background-attachment: fixed; /*Fija la imagen de fondo para que no se desplace al hacer scroll.*/
+    background-position: center; /*Centra la imagen de fondo en la página.*/
     background-color: rgb(255, 255, 255);
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /*Impide que la imagen de fondo se repita.*/
 }
+
 div {
     color: rgb(255, 255, 255);
     background-color: rgba(13, 105, 105, 30%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-style: dotted solid double;
-    border-width: 5px;
+    border-style: dotted solid double; /*Aplica diferentes estilos de borde a los lados del div.*/
+    border-width: 5px; /*Define el grosor del borde.*/
     border-color: rgba(13, 105, 105, 1);
 }
+
 .flex-container {
-    display: flex;
-    justify-content: start;
+    display: flex; /*Utiliza el modelo de diseño "flexbox" para organizar elementos hijos.*/
+    justify-content: start; /*Alinea los elementos hijos al inicio del contenedor.*/
 }
+
 .flex-container > div {
     background-color: rgba(13, 105, 105, 0.9);
-    margin: 1px;
-    padding: 1px;
-    max-height: 407px;
+    margin: 1px; /*Añade un pequeño margen entre los divs hijos.*/
+    padding: 1px; /*Establece un espacio interno mínimo dentro de los divs.*/
+    max-height: 407px; /*Restringe la altura máxima de los divs.*/
 }
+
 input, textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+    width: 100%; /*Hace que los campos ocupen todo el ancho disponible.*/
+    padding: 8px; /*Añade espacio interno dentro de los campos.*/
+    margin: 8px 0; /*Establece un margen vertical entre los campos.*/
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
 button {
     background-color: rgba(13, 105, 105, 0.9);
     color: white;
-    padding: 0.5rem 1rem;
-    border: none;
+    padding: 8px 16px; /*Define espacio interno alrededor del texto del botón.*/
+    border: none; /*Elimina el borde predeterminado del botón.*/
     border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: rgba(13, 105, 105, 0.7);
-}
-.login-section {
-    text-align: right;
-    padding: 10px;
-    background-color: rgba(13, 105, 105, 0.1);
+    cursor: pointer; /*Cambia el cursor a un indicador de "clicable" cuando el usuario pasa por encima del botón.*/
 }
 
+button:hover {
+    background-color: rgba(13, 105, 105, 0.7);
+
+.login-section {
+    text-align: right; /*Alinea el contenido de esta sección al lado derecho del contenedor.*/
+    padding: 10px; /*Añade espacio interno alrededor de la sección.*/
+    background-color: rgba(13, 105, 105, 0.1);
+
+/*Estilos para pantallas pequeñas (ancho máximo de 480px)*/
 @media (max-width: 480px) {
     h1 {
-        font-size: 30px;
+        font-size: 30px; /*Reduce el tamaño de los encabezados principales en dispositivos pequeños.*/
     }
 
     nav {
-        flex-direction: column;
+        flex-direction: column; /*Cambia la disposición del menú a vertical.*/
     }
 
     nav a {
-        padding: 10px;
-        text-align: center;
-        width: 100%;
+        padding: 10px; /*Reduce el espaciado interno de los enlaces.*/
+        text-align: center; /*Centra el texto de los enlaces.*/
+        width: 100%; /*Hace que los enlaces ocupen todo el ancho disponible.*/
     }
 
     .flex-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /*Apila los elementos hijos verticalmente.*/
+        align-items: center; /*Centra los elementos hijos horizontalmente.*/
     }
 
     .flex-container > div {
-        margin-bottom: 20px;
-        padding: 20px;
-        max-height: none;
+        margin-bottom: 20px; /*Añade un margen inferior para separar los divs.*/
+        padding: 20px; /*Aumenta el espaciado interno dentro de los divs.*/
+        max-height: none; /*Elimina la restricción de altura máxima.*/
     }
 
     input, textarea {
-        font-size: 14px;
+        font-size: 14px; /*Reduce el tamaño de fuente en los campos de entrada.*/
     }
 
     button {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 10px 20px; /*Reduce el tamaño del botón.*/
+        font-size: 14px; /*Ajusta el tamaño de fuente del botón.*/
     }
 
     .login-section {
-        text-align: center;
-        padding: 20px;
+        text-align: center; /*Centra el contenido de esta sección.*/
+        padding: 20px; /*Aumenta el espaciado interno de la sección.*/
     }
 }
 
+/*Estilos para pantallas grandes (ancho mínimo de 1368px)*/
 @media (min-width: 1368px) {
     h1 {
-        font-size: 60px;
+        font-size: 60px; /*Aumenta el tamaño de los encabezados principales en pantallas grandes.*/
     }
 
     nav a {
-        padding: 20px;
-        font-size: 18px;
+        padding: 20px; /*Incrementa el espaciado interno de los enlaces.*/
+        font-size: 18px; /*Aumenta el tamaño de fuente de los enlaces.*/
     }
 
     .flex-container {
-        justify-content: space-between;
+        justify-content: space-between; /*Distribuye los elementos hijos con espacio uniforme entre ellos.*/
     }
 
     .services, .contact {
-        padding: 50px;
+        padding: 50px; /*Incrementa el espaciado interno de estas secciones.*/
     }
 
     input, textarea {
-        font-size: 16px;
+        font-size: 16px; /*Incrementa el tamaño de fuente en los campos de entrada.*/
     }
 
     button {
-        padding: 12px 25px;
-        font-size: 16px;
+        padding: 12px 25px; /*Aumenta el tamaño del botón.*/
+        font-size: 16px; /*Incrementa el tamaño de fuente del botón.*/
     }
 }
+
 </style>

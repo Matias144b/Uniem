@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uniem - Ayudamos a emprendedores a iniciar su proyecto</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"><!-- Vincula un archivo CSS externo para personalizar la apariencia de la página. La ruta debe ser válida para que el navegador cargue los estilos. -->
 </head>
 <body>
-    <div class="login-section" id="login-section">
-        <span id="welcome-message"></span>
-        <button id="login-btn" onclick="login()">Iniciar sesión</button>
+    <div class="login-section" id="login-section"><!-- Un contenedor con una clase (class) para aplicar estilos y un identificador (id) único para manipulación en JavaScript. -->
+        <span id="welcome-message"></span><!-- Etiqueta en línea utilizada para mostrar un mensaje de bienvenida dinámico. Inicialmente vacía. -->
+        <button id="login-btn" onclick="login()">Iniciar sesión</button><!-- <button>:Crea un botón interactivo,id="login-btn": Identificador único para manejar el botón con JavaScript,onclick="login()": Atributo que ejecuta la función login() cuando se hace clic. -->
         <button id="register-btn" onclick="openRegisterForm()">Registrarse</button>
-        <button id="logout-btn" onclick="logout()" style="display:none;">Cerrar sesión</button>
+        <button id="logout-btn" onclick="logout()" style="display:none;">Cerrar sesión</button><!--style="display:none;": Oculta inicialmente el botón de cerrar sesión para mostrarlo solo cuando el usuario está logueado.-->
     </div>
     
-    <h1><img src="assets/logomini.png" alt="minilogo" width="25" height="25" style="border:2px solid rgba(13, 105, 105, 1)"> UNIEM</h1>   
+    <h1><img src="assets/logomini.png" alt="minilogo" width="25" height="25" style="border:2px solid rgba(13, 105, 105, 1)"> UNIEM</h1>  
 
 <div>
-    <nav>
-    <a href="#about">¿Quiénes somos?</a>
+    <nav> <!-- Contenedor semántico para la barra de navegación. -->
+    <a href="#about">¿Quiénes somos?</a> <!-- Enlaces que llevan a secciones específicas de la página identificadas por su id. -->
     <a href="#about2">Nuestra visión</a>
     <a href="#about3">Nuestra misión</a>
     <a href="#services">Servicios</a>
@@ -26,11 +26,11 @@
     </nav>
 </div>
 
-<div id="register-form" style="display:none;">
+<div id="register-form" style="display:none;"> <!-- id="register-form": Identificador único para manejar este contenedor,style="display:none;": Oculta el formulario hasta que sea necesario. -->
     <h2>Registro de Usuario</h2>
-    <form id="registerUserForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required>
+    <form id="registerUserForm"><!-- <Inicia un formulario identificado con id para referenciarlo en JavaScript. -->
+        <label for="nombre">Nombre:</label><!-- Asocia este texto al campo id="nombre", mejorando la accesibilidad. -->
+        <input type="text" id="nombre" required><!-- <input type="text">: Crea un campo de entrada de texto,required: Hace que este campo sea obligatorio para enviar el formulario. -->
 
         <label for="apellidos">Apellidos:</label>
         <input type="text" id="apellidos" required>
@@ -51,13 +51,14 @@
 
         <button type="button" onclick="register()">Registrar</button>
         <button type="button" onclick="closeRegisterForm()">Cancelar</button>
+        <!-- Botones que llaman a funciones específicas cuando son presionados (register y closeRegisterForm). -->
     </form>
 </div>
 
 <script>
     function updateLoginStatus() {
-        const username = localStorage.getItem("nombre");
-        const loginBtn = document.getElementById("login-btn");
+        const username = localStorage.getItem("nombre"); /*Obtiene el valor guardado bajo la clave "nombre" en el almacenamiento del navegador.*/
+        const loginBtn = document.getElementById("login-btn");/*Recupera elementos HTML para interactuar con ellos.*/
         const registerBtn = document.getElementById("register-btn");
         const logoutBtn = document.getElementById("logout-btn");
         const welcomeMessage = document.getElementById("welcome-message");
@@ -67,12 +68,14 @@
             loginBtn.style.display = "none";
             registerBtn.style.display = "none";
             logoutBtn.style.display = "inline-block";
-        } else {
+        }
+        else {
             welcomeMessage.textContent = "";
             loginBtn.style.display = "inline-block";
             registerBtn.style.display = "inline-block";
             logoutBtn.style.display = "none";
         }
+        /*Comprueba si hay un nombre guardado. Si existe, personaliza el mensaje de bienvenida y ajusta la visibilidad de los botones.*/
     }
 
     function openRegisterForm() {
@@ -84,48 +87,52 @@
     }
 
     function register() {
-        const nombre = document.getElementById("nombre").value;
+        const nombre = document.getElementById("nombre").value;/* Obtiene el valor ingresado por el usuario en cada campo del formulario.*/
         const apellidos = document.getElementById("apellidos").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         const genero = document.getElementById("genero").value;
 
         if (nombre && apellidos && email && password && genero) {
-            localStorage.setItem("nombre", nombre);
+            localStorage.setItem("nombre", nombre);/*Guarda los datos de cada campo en el almacenamiento local del navegador para ser utilizados más adelante.*/
             localStorage.setItem("apellidos", apellidos);
             localStorage.setItem("email", email);
             localStorage.setItem("password", password);
             localStorage.setItem("genero", genero);
-            alert("Registro exitoso. Ahora puedes iniciar sesión.");
-            closeRegisterForm();
-            updateLoginStatus();
+            /*Guarda los datos del usuario en localStorage para persistencia. Muestra un mensaje tras completar el registro,Verifica si todos los campos tienen valores (if (nombre && apellidos && email,etc).*/
+            alert("Registro exitoso. Ahora puedes iniciar sesión.");/*Si el registro es exitoso:Muestra un mensaje de confirmación con alert().*/
+            closeRegisterForm();/*Llama a closeRegisterForm() para ocultar el formulario.*/
+            updateLoginStatus();/*Actualiza el estado de inicio de sesión con updateLoginStatus().*/
         } else {
-            alert("Por favor, completa todos los campos.");
+            alert("Por favor, completa todos los campos.");/*Si el registro no es exitoso:Manda un mensaje de peticion con alert()*/
         }
     }
 
     function login() {
         const email = prompt("Por favor, ingresa tu correo electrónico:");
         const password = prompt("Por favor, ingresa tu contraseña:");
+        /*Muestra un cuadro de diálogo para que el usuario ingrese sus datos. Aquí se solicita el correo y la contraseña.*/
         
         const storedEmail = localStorage.getItem("email");
         const storedPassword = localStorage.getItem("password");
+        /*Recupera los valores de correo y contraseña almacenados previamente en localStorage durante el registro.*/
 
         if (email === storedEmail && password === storedPassword) {
             alert("Inicio de sesión exitoso.");
-            updateLoginStatus();
+            updateLoginStatus();/*Compara los datos ingresados por el usuario con los almacenados,si coinciden, confirma el inicio de sesión con un mensaje y actualiza el estado.*/
         } else {
-            alert("Correo electrónico o contraseña incorrectos. Inténtalo de nuevo.");
+            alert("Correo electrónico o contraseña incorrectos. Inténtalo de nuevo.");/*Si no coinciden, muestra un mensaje de error.
+            */
         }
     }
 
     function logout() {
         alert("Has cerrado sesión.");
-        localStorage.clear();
-        updateLoginStatus();
+        localStorage.clear();/* Elimina todos los datos almacenados del usuario.*/
+        updateLoginStatus();/*Llama a updateLoginStatus() para volver al estado inicial de los botones de login y registro.*/
     }
 
-    document.addEventListener("DOMContentLoaded", updateLoginStatus);
+    document.addEventListener("DOMContentLoaded", updateLoginStatus);/*Ejecuta la función updateLoginStatus automáticamente cuando el contenido HTML ha terminado de cargarse,esto asegura que la interfaz se configure correctamente según el estado de sesión del usuario.*/
 </script>
 
 <section id="about" class="about">
@@ -187,9 +194,9 @@ Uniem tiene como misión construir un entorno de apoyo donde los emprendedores p
 <section id="contact" class="contact">
     <h2 style="color: #ddd;">Contacto</h2>
     <p style="color: #ddd;">¿Tienes una idea? ¡Nos encantaría escucharte! Llena el siguiente formulario y nos pondremos en contacto contigo:</p>
-    <form onsubmit="handleSubmit(event)">
-        <label for="name" style="color: #ddd;">Nombre:</label>
-        <input type="text" id="name" name="name" required>
+    <form onsubmit="handleSubmit(event)"><!-- Define que al enviar el formulario, se ejecuta la función handleSubmit(). El parámetro event se usa para controlar el comportamiento predeterminado del formulario. -->
+        <label for="name" style="color: #ddd;">Nombre:</label><!-- <label>: Etiqueta descriptiva para el campo de texto,for="name" conecta la etiqueta con el campo id="name". -->
+        <input type="text" id="name" name="name" required><!-- required: Obliga a completar el campo antes de enviar el formulario. -->
         
         <label for="email" style="color: #ddd;">Correo Electrónico:</label>
         <input type="email" id="email" name="email" required>
@@ -197,25 +204,25 @@ Uniem tiene como misión construir un entorno de apoyo donde los emprendedores p
         <label for="message" style="color: #ddd;">Mensaje:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
         
-        <button type="submit" id="sendMessageBtn">Enviar Mensaje</button>
+        <button type="submit" id="sendMessageBtn">Enviar Mensaje</button><!-- Envía el formulario y activa la función definida en onsubmit. -->
     </form>
-    <p id="successMessage" style="color: lightgreen; display: none;">Mensaje enviado</p>
+    <p id="successMessage" style="color: lightgreen; display: none;">Mensaje enviado</p><!-- Muestra un mensaje de confirmación cuando se envía el formulario. Inicialmente está oculto (display: none). -->
   </section>
   
   <script>
     function handleSubmit(event) {
-      event.preventDefault(); // Evita que se recargue la página
+      event.preventDefault(); /*Detiene el comportamiento predeterminado de recargar la página al enviar el formulario.*/
       const successMessage = document.getElementById("successMessage");
-      successMessage.style.display = "block"; // Muestra el mensaje
+      successMessage.style.display = "block"; /*Muestra el mensaje de éxito al usuario.*/
       setTimeout(() => {
-        successMessage.style.display = "none"; // Oculta el mensaje después de 3 segundos
-      }, 3000);
+        successMessage.style.display = "none"; 
+      }, 3000);/*Después de 3 segundos,oculta el mensaje volviendo a establecer display: none.*/
     }
   </script>
   
 
-<footer style="text-align: center;">
-    <p><a href="https://www.facebook.com/CTL61?mibextid=ZbWKwL" target="_blank">Facebook</a></p>
+<footer style="text-align: center;"><!-- Contenedor semántico para el pie de página. -->
+    <p><a href="https://www.facebook.com/CTL61?mibextid=ZbWKwL" target="_blank">Facebook</a></p><!-- Enlaces que se abren en una nueva pestaña. -->
     <p><a href="https://www.instagram.com/uniem?igsh=NTBrc2w3a3VkOTFr" target="_blank">Instagram</a></p>
     &copy; 2024 UNIEM. Todos los derechos reservados.
 </footer>
