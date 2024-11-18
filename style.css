@@ -1,167 +1,168 @@
 <style>
 nav {
-    display: flex; /*Utiliza el modelo de diseño "flexbox" para organizar los elementos hijos dentro del contenedor*/
-    justify-content: center; /*Centra los elementos hijos horizontalmente dentro del contenedor.*/
-    background-color: rgba(13, 105, 105, 1);
+    display: flex; /* Utiliza el modelo de diseño "flexbox" para organizar los elementos hijos dentro del contenedor. */
+    justify-content: center; /* Centra los elementos hijos horizontalmente dentro del contenedor. */
+    background-color: rgba(13, 105, 105, 1); /* Define un color de fondo verde azulado sólido. */
 }
 
 nav a {
-    color: rgb(2, 1, 1);
-    padding: 16px; /*Agrega espacio interno alrededor de cada enlace.*/
-    text-decoration: none; /*Elimina el subrayado de los enlaces.*/
-    background-color: rgba(13, 105, 105, 1);
-    align-items: center; /*(Centra los elementos hijos verticalmente dentro del contenedor.*/
-    justify-content: center;
+    color: rgb(2, 1, 1); /* Define el color del texto como negro oscuro. */
+    padding: 16px; /* Agrega espacio interno alrededor de cada enlace. */
+    text-decoration: none; /* Elimina el subrayado de los enlaces. */
+    background-color: rgba(13, 105, 105, 1); /* Establece un color de fondo consistente con el contenedor del menú. */
+    align-items: center; /* (Nota: Este estilo no tiene efecto en elementos en línea como `a` dentro de este contexto). */
+    justify-content: center; /* (Nota: No afecta en este caso porque no hay un modelo de diseño de caja flexible en los enlaces). */
 }
 
 nav a:hover {
-    background-color: rgb(13, 84, 105);/*Cambia el color de fondo del enlace cuando el usuario pasa el cursor por encima.*/
+    background-color: rgb(13, 84, 105); /* Cambia el color de fondo del enlace cuando el usuario pasa el cursor por encima. */
 }
 
 section {
-    padding: 32px;/*Añade espacio interno en todas las direcciones dentro de las secciones.*/
+    padding: 32px; /* Añade espacio interno en todas las direcciones dentro de las secciones. */
 }
 
 .services, .contact {
-    background-color: rgba(13, 105, 105, 1);
-    margin: 32px 0; /*Añade un margen vertical entre estas secciones y los elementos adyacentes.*/
-    padding: 32px;
-    border-radius: 8px; /*Redondea las esquinas de estas secciones.*/
+    background-color: rgba(13, 105, 105, 1); /* Establece un color de fondo verde azulado sólido. */
+    margin: 32px 0; /* Añade un margen vertical entre estas secciones y los elementos adyacentes. */
+    padding: 32px; /* Agrega espacio interno a las secciones. */
+    border-radius: 8px; /* Redondea las esquinas de estas secciones. */
 }
 
 h1, h2, h3 {
-    color: rgba(13, 105, 105, 1);
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(13, 105, 105, 1); /* Asigna un color verde azulado al texto de los encabezados. */
+    text-align: center; /* Centra el texto horizontalmente dentro del contenedor. */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Usa una familia de fuentes sans-serif para los encabezados. */
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 50px; /* Define un tamaño de fuente grande para los encabezados principales. */
 }
 
 body {
-    background-image: url(assets/logo.jpg); /*Establece una imagen de fondo para la página.*/
-    background-attachment: fixed; /*Fija la imagen de fondo para que no se desplace al hacer scroll.*/
-    background-position: center; /*Centra la imagen de fondo en la página.*/
-    background-color: rgb(255, 255, 255);
-    background-repeat: no-repeat; /*Impide que la imagen de fondo se repita.*/
+    background-image: url(assets/logo.jpg); /* Establece una imagen de fondo para la página. */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace al hacer scroll. */
+    background-position: center; /* Centra la imagen de fondo en la página. */
+    background-color: rgb(255, 255, 255); /* Asigna un color de fondo blanco para áreas sin imagen. */
+    background-repeat: no-repeat; /* Impide que la imagen de fondo se repita. */
 }
 
 div {
-    color: rgb(255, 255, 255);
-    background-color: rgba(13, 105, 105, 30%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-style: dotted solid double; /*Aplica diferentes estilos de borde a los lados del div.*/
-    border-width: 5px; /*Define el grosor del borde.*/
-    border-color: rgba(13, 105, 105, 1);
+    color: rgb(255, 255, 255); /* Asigna el color blanco al texto dentro de los divs. */
+    background-color: rgba(13, 105, 105, 30%); /* Establece un fondo semi-transparente para los divs. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Usa una fuente sans-serif para los textos en los divs. */
+    border-style: dotted solid double; /* Aplica diferentes estilos de borde a los lados del div. */
+    border-width: 5px; /* Define el grosor del borde. */
+    border-color: rgba(13, 105, 105, 1); /* Usa el mismo verde azulado sólido para el borde. */
 }
 
 .flex-container {
-    display: flex; /*Utiliza el modelo de diseño "flexbox" para organizar elementos hijos.*/
-    justify-content: start; /*Alinea los elementos hijos al inicio del contenedor.*/
+    display: flex; /* Utiliza el modelo de diseño "flexbox" para organizar elementos hijos. */
+    justify-content: start; /* Alinea los elementos hijos al inicio del contenedor. */
 }
 
 .flex-container > div {
-    background-color: rgba(13, 105, 105, 0.9);
-    margin: 1px; /*Añade un pequeño margen entre los divs hijos.*/
-    padding: 1px; /*Establece un espacio interno mínimo dentro de los divs.*/
-    max-height: 407px; /*Restringe la altura máxima de los divs.*/
+    background-color: rgba(13, 105, 105, 0.9); /* Establece un fondo casi opaco para los divs dentro del flex container. */
+    margin: 1px; /* Añade un pequeño margen entre los divs hijos. */
+    padding: 1px; /* Establece un espacio interno mínimo dentro de los divs. */
+    max-height: 407px; /* Restringe la altura máxima de los divs. */
 }
 
 input, textarea {
-    width: 100%; /*Hace que los campos ocupen todo el ancho disponible.*/
-    padding: 8px; /*Añade espacio interno dentro de los campos.*/
-    margin: 8px 0; /*Establece un margen vertical entre los campos.*/
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 100%; /* Hace que los campos ocupen todo el ancho disponible. */
+    padding: 0.5rem; /* Añade espacio interno dentro de los campos. */
+    margin: 0.5rem 0; /* Establece un margen vertical entre los campos. */
+    border: 1px solid #ddd; /* Añade un borde gris claro alrededor de los campos. */
+    border-radius: 4px; /* Redondea las esquinas de los campos. */
 }
 
 button {
-    background-color: rgba(13, 105, 105, 0.9);
-    color: white;
-    padding: 8px 16px; /*Define espacio interno alrededor del texto del botón.*/
-    border: none; /*Elimina el borde predeterminado del botón.*/
-    border-radius: 4px;
-    cursor: pointer; /*Cambia el cursor a un indicador de "clicable" cuando el usuario pasa por encima del botón.*/
+    background-color: rgba(13, 105, 105, 0.9); /* Usa un fondo verde azulado casi opaco para los botones. */
+    color: white; /* Establece el color del texto en blanco. */
+    padding: 0.5rem 1rem; /* Define espacio interno alrededor del texto del botón. */
+    border: none; /* Elimina el borde predeterminado del botón. */
+    border-radius: 4px; /* Redondea las esquinas del botón. */
+    cursor: pointer; /* Cambia el cursor a un indicador de "clicable" cuando el usuario pasa por encima del botón. */
 }
 
 button:hover {
-    background-color: rgba(13, 105, 105, 0.7);
+    background-color: rgba(13, 105, 105, 0.7); /* Oscurece ligeramente el fondo del botón cuando el usuario pasa el cursor por encima. */
+}
 
 .login-section {
-    text-align: right; /*Alinea el contenido de esta sección al lado derecho del contenedor.*/
-    padding: 10px; /*Añade espacio interno alrededor de la sección.*/
-    background-color: rgba(13, 105, 105, 0.1);
+    text-align: right; /* Alinea el contenido de esta sección al lado derecho del contenedor. */
+    padding: 10px; /* Añade espacio interno alrededor de la sección. */
+    background-color: rgba(13, 105, 105, 0.1); /* Usa un fondo semi-transparente para esta sección. */
+}
 
-/*Estilos para pantallas pequeñas (ancho máximo de 480px)*/
+/* Estilos para pantallas pequeñas (ancho máximo de 480px) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 30px; /*Reduce el tamaño de los encabezados principales en dispositivos pequeños.*/
+        font-size: 30px; /* Reduce el tamaño de los encabezados principales en dispositivos pequeños. */
     }
 
     nav {
-        flex-direction: column; /*Cambia la disposición del menú a vertical.*/
+        flex-direction: column; /* Cambia la disposición del menú a vertical. */
     }
 
     nav a {
-        padding: 10px; /*Reduce el espaciado interno de los enlaces.*/
-        text-align: center; /*Centra el texto de los enlaces.*/
-        width: 100%; /*Hace que los enlaces ocupen todo el ancho disponible.*/
+        padding: 10px; /* Reduce el espaciado interno de los enlaces. */
+        text-align: center; /* Centra el texto de los enlaces. */
+        width: 100%; /* Hace que los enlaces ocupen todo el ancho disponible. */
     }
 
     .flex-container {
-        flex-direction: column; /*Apila los elementos hijos verticalmente.*/
-        align-items: center; /*Centra los elementos hijos horizontalmente.*/
+        flex-direction: column; /* Apila los elementos hijos verticalmente. */
+        align-items: center; /* Centra los elementos hijos horizontalmente. */
     }
 
     .flex-container > div {
-        margin-bottom: 20px; /*Añade un margen inferior para separar los divs.*/
-        padding: 20px; /*Aumenta el espaciado interno dentro de los divs.*/
-        max-height: none; /*Elimina la restricción de altura máxima.*/
+        margin-bottom: 20px; /* Añade un margen inferior para separar los divs. */
+        padding: 20px; /* Aumenta el espaciado interno dentro de los divs. */
+        max-height: none; /* Elimina la restricción de altura máxima. */
     }
 
     input, textarea {
-        font-size: 14px; /*Reduce el tamaño de fuente en los campos de entrada.*/
+        font-size: 14px; /* Reduce el tamaño de fuente en los campos de entrada. */
     }
 
     button {
-        padding: 10px 20px; /*Reduce el tamaño del botón.*/
-        font-size: 14px; /*Ajusta el tamaño de fuente del botón.*/
+        padding: 10px 20px; /* Reduce el tamaño del botón. */
+        font-size: 14px; /* Ajusta el tamaño de fuente del botón. */
     }
 
     .login-section {
-        text-align: center; /*Centra el contenido de esta sección.*/
-        padding: 20px; /*Aumenta el espaciado interno de la sección.*/
+        text-align: center; /* Centra el contenido de esta sección. */
+        padding: 20px; /* Aumenta el espaciado interno de la sección. */
     }
 }
 
-/*Estilos para pantallas grandes (ancho mínimo de 1368px)*/
+/* Estilos para pantallas grandes (ancho mínimo de 1368px) */
 @media (min-width: 1368px) {
     h1 {
-        font-size: 60px; /*Aumenta el tamaño de los encabezados principales en pantallas grandes.*/
+        font-size: 60px; /* Aumenta el tamaño de los encabezados principales en pantallas grandes. */
     }
 
     nav a {
-        padding: 20px; /*Incrementa el espaciado interno de los enlaces.*/
-        font-size: 18px; /*Aumenta el tamaño de fuente de los enlaces.*/
+        padding: 20px; /* Incrementa el espaciado interno de los enlaces. */
+        font-size: 18px; /* Aumenta el tamaño de fuente de los enlaces. */
     }
 
     .flex-container {
-        justify-content: space-between; /*Distribuye los elementos hijos con espacio uniforme entre ellos.*/
+        justify-content: space-between; /* Distribuye los elementos hijos con espacio uniforme entre ellos. */
     }
 
     .services, .contact {
-        padding: 50px; /*Incrementa el espaciado interno de estas secciones.*/
+        padding: 50px; /* Incrementa el espaciado interno de estas secciones. */
     }
 
     input, textarea {
-        font-size: 16px; /*Incrementa el tamaño de fuente en los campos de entrada.*/
+        font-size: 16px; /* Incrementa el tamaño de fuente en los campos de entrada. */
     }
 
     button {
-        padding: 12px 25px; /*Aumenta el tamaño del botón.*/
-        font-size: 16px; /*Incrementa el tamaño de fuente del botón.*/
+        padding: 12px 25px; /* Aumenta el tamaño del botón. */
+        font-size: 16px; /* Incrementa el tamaño de fuente del botón. */
     }
 }
-
 </style>
